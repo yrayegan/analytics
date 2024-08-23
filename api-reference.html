@@ -14,7 +14,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-87BB266D.js"></script>
+    <script src="dist/sidebar_items-7C6BA389.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -181,6 +181,8 @@ Pages
 
   </div>
 
+    <div class="summary-synopsis"><p>Functions for user authentication context.</p></div>
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -293,6 +295,15 @@ period.</p></div>
     <a href="Plausible.Auth.UserAdmin.html" translate="no">Plausible.Auth.UserAdmin</a>
 
   </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.Auth.UserSession.html" translate="no">Plausible.Auth.UserSession</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for storing user session data.</p></div>
 
 </div>
 <div class="summary-row">
@@ -597,6 +608,15 @@ locale names for presentation purposes.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.ClickhouseLocationData.html" translate="no">Plausible.ClickhouseLocationData</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schema for storing location id &lt;-&gt; translation mappings in ClickHouse</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.ClickhouseRepo.html" translate="no">Plausible.ClickhouseRepo</a>
 
   </div>
@@ -665,6 +685,15 @@ run via remote shell or otherwise (TBD).</p></div>
     <div class="summary-synopsis"><p>Clean up referrer_source entries for demo site with
 <code class="inline">Direct / None</code> for value populated by dogfooding
 Plausible stats.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="Plausible.DataMigration.LocationsSync.html" translate="no">Plausible.DataMigration.LocationsSync</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>ClickHouse locations data migration for storing location names in ClickHouse.</p></div>
 
 </div>
 <div class="summary-row">
@@ -1811,6 +1840,16 @@ for dimensions, filters and metrics used in import table queries</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
+    <a href="Plausible.Stats.QueryResult.html" translate="no">Plausible.Stats.QueryResult</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This struct contains the (JSON-encodable) response for a query and
+is responsible for building it from database query results.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
     <a href="Plausible.Stats.SQL.Expression.html" translate="no">Plausible.Stats.SQL.Expression</a>
 
   </div>
@@ -2311,6 +2350,9 @@ To avoid blocking the queue, a timeout of 15 minutes is enforced.</p></div>
 
   </div>
 
+    <div class="summary-synopsis"><p>Plug for populating conn assigns with user data
+on the basis of authenticated session token.</p></div>
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -2351,13 +2393,6 @@ To avoid blocking the queue, a timeout of 15 minutes is enforced.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="PlausibleWeb.CRMAuthPlug.html" translate="no">PlausibleWeb.CRMAuthPlug</a>
-
-  </div>
-
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="PlausibleWeb.Captcha.html" translate="no">PlausibleWeb.Captcha</a>
 
   </div>
@@ -2380,6 +2415,16 @@ benefits for Growth, Business, and Enterprise plans.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>A banner that appears on the first dashboard launch</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.Components.FlowProgress.html" translate="no">PlausibleWeb.Components.FlowProgress</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Component for provisioning/registration flows displaying
+progress status.</p></div>
 
 </div>
 <div class="summary-row">
@@ -2452,6 +2497,20 @@ tests that require setting up a connection.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Revenue specific functions for the API scope</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.DebugController.html" translate="no">PlausibleWeb.DebugController</a>
+
+  </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.DebugView.html" translate="no">PlausibleWeb.DebugView</a>
+
+  </div>
 
 </div>
 <div class="summary-row">
@@ -2594,6 +2653,16 @@ to the Plausible frontend.</p></div>
     <a href="PlausibleWeb.LayoutView.JWT.html" translate="no">PlausibleWeb.LayoutView.JWT</a>
 
   </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.Live.AuthContext.html" translate="no">PlausibleWeb.Live.AuthContext</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This module supplies LiveViews with currently logged in user data <em>if</em> session
+data contains a valid token.</p></div>
 
 </div>
 <div class="summary-row">
@@ -3442,6 +3511,10 @@ Plugins API Tokens lookup.</p></div>
 
   </div>
 
+    <div class="summary-synopsis"><p>NOTE: This plug will be replaced with a different
+session expiration mechanism once server-side persisted
+sessions are rolled out.</p></div>
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -3518,6 +3591,15 @@ Authentication.</p></div>
     <a href="PlausibleWeb.UnsubscribeView.html" translate="no">PlausibleWeb.UnsubscribeView</a>
 
   </div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="PlausibleWeb.UserAuth.html" translate="no">PlausibleWeb.UserAuth</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Functions for user session management.</p></div>
 
 </div>
 
