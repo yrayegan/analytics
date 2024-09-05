@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>Plausible.Stats.Imported.SQL.Builder — Plausible v0.0.1</title>
+    <title>Plausible.Stats.DateTimeRange — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-7C6BA389.js"></script>
+    <script src="dist/sidebar_items-51208407.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,20 +131,19 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/imported/sql/builder.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/datetime_range.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">Plausible.Stats.Imported.SQL.Builder</span> 
+  <span translate="no">Plausible.Stats.DateTimeRange</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>This module is responsible for generating SQL/Ecto expressions
-for dimensions, filters and metrics used in import table queries</p>
+<p>Defines a struct similar <a href="https://hexdocs.pm/elixir/Date.Range.html"><code class="inline">Date.Range</code></a>, but with <a href="https://hexdocs.pm/elixir/DateTime.html"><code class="inline">DateTime</code></a> instead of <a href="https://hexdocs.pm/elixir/Date.html"><code class="inline">Date</code></a>.</p><p>The structs should be created with the <a href="#new!/2"><code class="inline">new!/2</code></a> function.</p>
   </section>
 
 
@@ -155,6 +154,20 @@ for dimensions, filters and metrics used in import table queries</p>
       </a>
       <span class="text">Summary</span>
     </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:t/0" translate="no">t()</a>
+
+      </div>
+
+    </div>
+
+</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -162,7 +175,7 @@ for dimensions, filters and metrics used in import table queries</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#group_imported_by/2" translate="no">group_imported_by(q, query)</a>
+        <a href="#new!/2" translate="no">new!(first, last)</a>
 
       </div>
 
@@ -170,31 +183,17 @@ for dimensions, filters and metrics used in import table queries</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#naive_dimension_join/3" translate="no">naive_dimension_join(q1, q2, metrics)</a>
+        <a href="#new!/3" translate="no">new!(first, last, timezone)</a>
 
       </div>
+
+        <div class="summary-synopsis"><p>Creates a <code class="inline">DateTimeRange</code> struct from the given <code class="inline">%Date{}</code> structs.</p></div>
 
     </div>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#select_imported_metrics/2" translate="no">select_imported_metrics(q, list)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#select_joined_dimensions/2" translate="no">select_joined_dimensions(q, query)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#select_joined_metrics/2" translate="no">select_joined_metrics(q, list)</a>
+        <a href="#to_date_range/1" translate="no">to_date_range(date_time_range)</a>
 
       </div>
 
@@ -205,6 +204,75 @@ for dimensions, filters and metrics used in import table queries</p>
   </section>
 
 
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Types</span>
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:t/0">
+
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/datetime_range.ex#L11" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> t() :: %Plausible.Stats.DateTimeRange{
+  first: %DateTime{
+    calendar: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    day: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    hour: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    microsecond: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    minute: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    month: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    second: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    std_offset: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    time_zone: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    utc_offset: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    year: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    zone_abbr: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+  },
+  last: %DateTime{
+    calendar: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    day: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    hour: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    microsecond: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    minute: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    month: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    second: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    std_offset: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    time_zone: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    utc_offset: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    year: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+    zone_abbr: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+  }
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
   <section id="functions" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#functions">
@@ -213,16 +281,16 @@ for dimensions, filters and metrics used in import table queries</p>
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="group_imported_by/2">
+<section class="detail" id="new!/2">
 
   <div class="detail-header">
-    <a href="#group_imported_by/2" class="detail-link" title="Link to this function">
+    <a href="#new!/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">group_imported_by(q, query)</h1>
+    <h1 class="signature" translate="no">new!(first, last)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/imported/sql/builder.ex#L210" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/datetime_range.ex#L41" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -235,16 +303,16 @@ for dimensions, filters and metrics used in import table queries</p>
 
   </section>
 </section>
-<section class="detail" id="naive_dimension_join/3">
+<section class="detail" id="new!/3">
 
   <div class="detail-header">
-    <a href="#naive_dimension_join/3" class="detail-link" title="Link to this function">
+    <a href="#new!/3" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">naive_dimension_join(q1, q2, metrics)</h1>
+    <h1 class="signature" translate="no">new!(first, last, timezone)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/imported/sql/builder.ex#L455" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/datetime_range.ex#L23" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -254,63 +322,21 @@ for dimensions, filters and metrics used in import table queries</p>
 
   <section class="docstring">
 
-
+<p>Creates a <code class="inline">DateTimeRange</code> struct from the given <code class="inline">%Date{}</code> structs.</p><p>The first datetime will become the first date at 00:00:00, and the last datetime
+will become the last date at 23:59:59. Both dates will be turned into <code class="inline">%DateTime{}</code>
+structs in the given timezone.</p>
   </section>
 </section>
-<section class="detail" id="select_imported_metrics/2">
+<section class="detail" id="to_date_range/1">
 
   <div class="detail-header">
-    <a href="#select_imported_metrics/2" class="detail-link" title="Link to this function">
+    <a href="#to_date_range/1" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">select_imported_metrics(q, list)</h1>
+    <h1 class="signature" translate="no">to_date_range(date_time_range)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/imported/sql/builder.ex#L16" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="select_joined_dimensions/2">
-
-  <div class="detail-header">
-    <a href="#select_joined_dimensions/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">select_joined_dimensions(q, query)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/imported/sql/builder.ex#L327" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="select_joined_metrics/2">
-
-  <div class="detail-header">
-    <a href="#select_joined_metrics/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">select_joined_metrics(q, list)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/imported/sql/builder.ex#L351" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/stats/datetime_range.ex#L48" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
