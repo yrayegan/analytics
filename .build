@@ -194,6 +194,7 @@ Plausible.Stats.Imported.SQL.Expression.html
 Plausible.Stats.Imported.SQL.WhereBuilder.html
 Plausible.Stats.Imported.html
 Plausible.Stats.Interval.html
+Plausible.Stats.JSONSchema.Utils.html
 Plausible.Stats.JSONSchema.html
 Plausible.Stats.Legacy.Dimensions.html
 Plausible.Stats.Legacy.QueryBuilder.html
@@ -262,7 +263,6 @@ PlausibleWeb.Api.StatsController.html
 PlausibleWeb.AuthController.html
 PlausibleWeb.AuthPlug.html
 PlausibleWeb.AuthView.html
-PlausibleWeb.AuthorizeSiteAccess.html
 PlausibleWeb.AvatarController.html
 PlausibleWeb.BillingController.html
 PlausibleWeb.BillingView.html
@@ -386,6 +386,7 @@ PlausibleWeb.Plugins.API.Views.SharedLink.html
 PlausibleWeb.PluginsAPICase.html
 PlausibleWeb.Plugs.AuthorizePluginsAPI.html
 PlausibleWeb.Plugs.AuthorizePublicAPI.html
+PlausibleWeb.Plugs.AuthorizeSiteAccess.html
 PlausibleWeb.Plugs.ErrorHandler.html
 PlausibleWeb.Plugs.MaybeDisableRegistration.html
 PlausibleWeb.Plugs.NoRobots.html
@@ -395,13 +396,13 @@ PlausibleWeb.RemoteIP.html
 PlausibleWeb.RequireAccountPlug.html
 PlausibleWeb.RequireLoggedOutPlug.html
 PlausibleWeb.Router.html
-PlausibleWeb.SessionTimeoutPlug.html
 PlausibleWeb.Site.MembershipController.html
 PlausibleWeb.Site.MembershipView.html
 PlausibleWeb.SiteController.html
 PlausibleWeb.SiteView.html
 PlausibleWeb.StatsController.html
 PlausibleWeb.StatsView.html
+PlausibleWeb.TestController.html
 PlausibleWeb.Tracker.html
 PlausibleWeb.TwoFactor.Session.html
 PlausibleWeb.UnsubscribeController.html
@@ -438,8 +439,8 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_data-CA7451DB.js
-dist/sidebar_items-51208407.js
+dist/search_data-B4E0DF90.js
+dist/sidebar_items-7672636F.js
 index.html
 readme.html
 search.html
