@@ -8,13 +8,13 @@
     <meta name="project" content="Plausible v0.0.1">
 
 
-    <title>Plausible.Teams.Adapter.Read.Ownership — Plausible v0.0.1</title>
+    <title>Plausible.DataMigration.MissingScrollDepth — Plausible v0.0.1</title>
     <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-EC6E1389.js"></script>
+    <script src="dist/sidebar_items-F90252DF.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -131,19 +131,19 @@ Pages
 
 <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/adapter/read/ownership.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/data_migration/missing_scroll_depth.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
-  <span translate="no">Plausible.Teams.Adapter.Read.Ownership</span> 
+  <span translate="no">Plausible.DataMigration.MissingScrollDepth</span> 
   <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Transition adapter for new schema reads</p>
+<p>Set scroll_depth to 255 (max UInt8) for all pageleave events where it's 0.</p>
   </section>
 
 
@@ -161,47 +161,7 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#all_pending_site_transfers/2" translate="no">all_pending_site_transfers(email, user)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#check_feature_access/2" translate="no">check_feature_access(site, new_owner)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#ensure_can_take_ownership/2" translate="no">ensure_can_take_ownership(site, user)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#get_owner/2" translate="no">get_owner(site, user)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#has_sites?/1" translate="no">has_sites?(user)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#owns_sites?/2" translate="no">owns_sites?(user, sites)</a>
+        <a href="#run/0" translate="no">run()</a>
 
       </div>
 
@@ -220,126 +180,16 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="all_pending_site_transfers/2">
+<section class="detail" id="run/0">
 
   <div class="detail-header">
-    <a href="#all_pending_site_transfers/2" class="detail-link" title="Link to this function">
+    <a href="#run/0" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">all_pending_site_transfers(email, user)</h1>
+    <h1 class="signature" translate="no">run()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/adapter/read/ownership.ex#L11" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="check_feature_access/2">
-
-  <div class="detail-header">
-    <a href="#check_feature_access/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">check_feature_access(site, new_owner)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/adapter/read/ownership.ex#L62" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="ensure_can_take_ownership/2">
-
-  <div class="detail-header">
-    <a href="#ensure_can_take_ownership/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">ensure_can_take_ownership(site, user)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/adapter/read/ownership.ex#L32" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="get_owner/2">
-
-  <div class="detail-header">
-    <a href="#get_owner/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">get_owner(site, user)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/adapter/read/ownership.ex#L18" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="has_sites?/1">
-
-  <div class="detail-header">
-    <a href="#has_sites?/1" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">has_sites?(user)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/adapter/read/ownership.ex#L40" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="owns_sites?/2">
-
-  <div class="detail-header">
-    <a href="#owns_sites?/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">owns_sites?(user, sites)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/adapter/read/ownership.ex#L48" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/data_migration/missing_scroll_depth.ex#L6" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
